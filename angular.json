@@ -1,0 +1,37 @@
+﻿{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "copy-source-to-tcb-bug": {
+            "projectType": "application",
+            "root": "",
+            "sourceRoot": "src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "@angular/build:application",
+                    "options": {
+                        "outputPath": "dist/copy-source-to-tcb-bug",
+                        "index": "src/index.html",
+                        "browser": "src/main.ts",
+                        "tsConfig": "tsconfig.app.json"
+                    }
+                },
+                "serve": {
+                    "builder": "@angular/build:dev-server",
+                    "configurations": {
+                        "development": {
+                            "buildTarget": "copy-source-to-tcb-bug:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                }
+            }
+        }
+    },
+    "cli": {
+        "analytics": false
+    }
+}
+
